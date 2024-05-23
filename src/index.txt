@@ -1,0 +1,95 @@
+class Product{
+id:string;
+name:string;
+price:number;
+stock:number;
+
+constructor(id:string,name:string,price:number,stock:number)
+{
+    this.id=id;
+    this.name=name;
+    this.price=price;
+    this.stock=stock;
+}
+
+stockDetails=():void => {console.log("Stock number is:",this.stock)}
+updateStock=(value:number):void => {this.stock=value;}
+displayProductDetails=():void =>{console.log("product details \n Product Id : ",this.id,"\n Product Name is : ",this.name,"\n price :",this.price ,"\n stock :", this.stock)}
+
+
+
+}
+
+
+
+class Customer
+{
+
+id:string;
+name:string;
+email:string;
+
+constructor(id:string,name:string,email:string)
+  {
+
+    this.id=id;
+    this.name=name;
+    this.email=email;
+    }
+
+
+updateTheEmail=(updatedEmail:string):void =>{this.email=updatedEmail ; console.log("updated value is",this.email)}
+displayCustomerDetails=():void =>{}
+
+
+}
+
+
+class Order {
+
+id:string;
+customerId:string;
+products:{productId:string;quantity:number}[]=[];
+constructor(id:string,customerId:string,)
+{
+    
+    this.id=id;
+    this.customerId=customerId;
+}
+
+ addProduct=(productId:string,quantity:number):void=>{ this.products.push({productId:productId,quantity:quantity})}
+ totalPrice=():void=>{}
+ displayOrderDetails=():void=>{console.log(this.products)}
+
+ totalPriceOfOrder=()=>{}
+}
+
+
+const product1=new Product("p1","Laptop",1500,10)
+const product2=new Product("p2","Phone",800,20);
+
+const customer1=new Customer("c1","Alice","alice@gmail.com")
+
+const order1=new Order("01","c1");
+
+order1.addProduct("p1",2,)
+order1.addProduct("p2",1)
+
+order1.displayOrderDetails();
+
+product1.stockDetails();
+product2.stockDetails();
+
+product1.updateStock(30);
+product1.stockDetails();  // To verify wheather the stock has been updated or not
+
+product1.displayProductDetails();
+product2.displayProductDetails();
+
+
+console.log("old email id  is",customer1.email);
+customer1.updateTheEmail("alice@yahoo");
+    
+
+
+console.log();
